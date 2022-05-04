@@ -1,0 +1,57 @@
+.container{
+    max-width: 1170px;
+}
+.navbar{
+    height: 80px;
+    border-bottom: 1px solid #ddd;
+}
+.navbar-nav{
+    align-items: center;
+    margin-right: auto;
+}
+.navbar-collapse{
+    justify-content: space-between;
+}
+.cs-header-image-1{
+    max-width: 170px;
+}
+.cs-header-image-2{
+    max-width: 50px;
+}
+.cs-header-btn-1{
+    background-color: #e6007e;
+    color: #ffffff;
+}
+.cs-header-btn-2{
+    background-color: #ffffff;
+    color: #e6007e;
+}
+.navbar .btn{
+    padding: 4px 12px;
+    border-radius: 12px;
+    width: 80px;
+    margin-left: 10px;
+}
+.cs-menu{
+    width: 170px;
+}
+.cs-menu .nav-link{
+    color: #000000;
+}
+.search-icon{
+    padding: 20px 30px;
+    font-size: 20px;
+}
+.dropdown-menu.show{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.dropdown{
+    position: initial;
+}
