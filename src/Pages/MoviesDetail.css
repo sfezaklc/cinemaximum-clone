@@ -15,11 +15,6 @@
 }
 
 
-.btn-outline-secondary {
-    color: #ffffff;
-    border: 2px solid #ffffff;
-}
-
 
 .cs-style {
     background: linear-gradient(13deg, #ec2938 0%, #e6017c 99%);
@@ -35,6 +30,9 @@
     line-height: 3;
     font-size: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .input::after {
     content: '';

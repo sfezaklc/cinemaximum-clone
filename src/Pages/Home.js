@@ -1,12 +1,14 @@
 import React from 'react'
 import './Home.css'
-import Carousel from '../Components/Carousel/Carousel'
-import MultipleCarousel from '../Components/MultipleCarousel/MultipleCarousel'
+import MainCarousel from '../Components/Carousel/MainCarousel/MainCarousel'
+import MultipleCarousel from '../Components/Carousel/MultipleCarousel/MultipleCarousel'
+import Footer from '../Components/Footer/Footer'
 function Home () {
     return (
         <>
-            <Carousel />
+            <MainCarousel />
             <MultipleCarousel />
+            <Footer />
         </>
     )
 }

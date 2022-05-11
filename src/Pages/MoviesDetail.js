@@ -3,8 +3,11 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './MoviesDetail.css';
-import BuyTicket from './BuyTicket';
-import {Modal} from 'bootstrap'
+import { Modal } from 'bootstrap'
+import Footer from '../Components/Footer/Footer';
+import Days from '../Components/Tabs/Days';
+import { faSort } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function MoviesDetail() {
   const options = [
     {
@@ -30,7 +33,7 @@ export default function MoviesDetail() {
       cinemas: [
         {
           id: 1,
-          location: "Ankamall"
+          location: "Cevahir"
         }],
     }, {
       id: 3,
@@ -38,7 +41,7 @@ export default function MoviesDetail() {
       cinemas: [
         {
           id: 1,
-          location: "Ankamall"
+          location: "Forum Bornova"
         }],
     }
   ]
@@ -80,20 +83,33 @@ export default function MoviesDetail() {
   const openModal = () => {
     setShowModal(true)
   }
-
   const HandleCity = (el) => {
     setSelectedCity(el)
   }
   const HandleCinemas = (el) => {
-    setSelectedCinemas(el)
     Promise.resolve()
-    .then(() => setShowModal(false))
-    .then(() => navigate(`/buyticket/${id}/${el.location}`))
+      .then(() => {
+        selectedCinemas.push(el)
+        setSelectedCinemas(selectedCinemas)
+        console.log(selectedCinemas)
+      })
+      .then(() => setShowModal(false))
+      .then(() => {
+        // let item = document.querySelector('#myTab li:first-child button')
+        // console.log(item)
+        // item.classList.add('active')
+        // document.querySelector('#myTabContent').firstChild.classList.add('show', 'active')
+      
+      })
+    //   Promise.resolve()
+    //     .then(() => setShowModal(false))
+    //     .then(() => navigate(`/buyticket/${id}/${el.location}`))
   }
 
+
   useEffect(() => {
-    console.log(selectedCity)
-  }, [selectedCity])
+    console.log('selectedXCinamas', typeof (selectedCinemas))
+  }, [selectedCinemas])
 
   const customStyle = {
     backgroundImage: `url(${movie.image})`,
@@ -140,13 +156,14 @@ export default function MoviesDetail() {
         </div>
       </div>
 
-      <div  id='buyTicket' className='d-flex container mt-5 mb-5 justify-content-evenly cs-style'>
+      <div id='buyTicket' className='d-flex container mt-5 mb-5 justify-content-evenly cs-style'>
         <div>
           <h3>Bilet Al</h3>
           <p>Sinema Seç</p>
         </div>
         <div className='input' onClick={openModal}>
           Sinema Seç
+          <FontAwesomeIcon icon={faSort} />
         </div>
       </div>
       <div className="modal" tabIndex="-1" id="exampleModal" ref={modalRef}>
@@ -160,7 +177,7 @@ export default function MoviesDetail() {
               {
                 selectedCity ?
                   selectedCity.cinemas.map(item => (
-                    <li key={item} onClick={() => HandleCinemas(item)}>
+                    <li key={item.id} onClick={() => HandleCinemas(item)}>
                       {item.location}
                     </li>
                   ))
@@ -175,6 +192,12 @@ export default function MoviesDetail() {
           </div>
         </div>
       </div>
+
+      {selectedCinemas.length > 0 ?
+        <Days selectedCinemas={selectedCinemas} id={id}></Days>
+        : ''
+      }
+      <Footer></Footer>
     </>
   )
 }

@@ -1,40 +1,44 @@
 import { React, useEffect, useState } from 'react'
 import './MultipleCarousel.css'
-import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import FC from '../../images/Posters/FC_Poster_TR_y.jpg'
-import sonic from '../../images/Posters/kirpi_sonic.jpg'
-import ci from '../../images/Posters/cesur-itfaiyeci.png'
-import doru from '../../images/Posters/doru-macera-ormani.png'
-import kuzeyli from '../../images/Posters/kuzeyli.png'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import axios from 'axios';
-import MoviesDetail from '../../Pages/MoviesDetail';
 const MultipleCarousel = () => {
+
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 3000 },
+            items: 7
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 5.5
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 4
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 2
+        }
+    };
     const navigate = useNavigate();
-  const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState([]);
     const fetchTasks = () => {
         axios.get("http://localhost:3004/movies")
-      .then(data =>{
-        setMovies(data.data)
-      })
-      .catch(error => {
-        console.log(error);
-      })
+            .then(data => {
+                setMovies(data.data)
+            })
+            .catch(error => {
+                console.log(error);
+            })
     };
     useEffect(() => {
-      fetchTasks()
-      }, [])
-    
+        fetchTasks()
+    }, [])
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 5.5,
-        slidesToScroll: 1
-    }
     return (
         <div className='container-fluid mt-5'>
             <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -48,24 +52,21 @@ const MultipleCarousel = () => {
             <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="pills-vision" role="tabpanel" aria-labelledby="pills-vision-tab">
                     <div className='multiCarousel'>
-                        <Slider {...settings} >
-                            {movies.map((item, index) =>(
+                        <Carousel responsive={responsive} autoPlay={false}>
+                            {movies.map((item, index) => (
                                 <div className="card" key={index} onClick={() => navigate(`/moviesdetail/${item.id}`)}>
-                                <img className="img-fluid" src={item.image} alt="Card image cap" />
-                                <div className="card-body">
-                                    <a href="#" className="btn btn-light">Yorum Yap</a>
-                                    <a href="#" className="btn btn-light">Bilet Al</a>
+                                    <img className="img-fluid" src={item.image} alt="Card image cap" />
+                                    <div className="card-body">
+                                        <a href="#" className="btn btn-light">Yorum Yap</a>
+                                        <a href="#" className="btn btn-light">Bilet Al</a>
+                                    </div>
                                 </div>
-                            </div>
                             ))}
-                        </Slider>
+                        </Carousel>
                     </div>
-
                 </div>
                 <div className="tab-pane fade" id="pills-soon" role="tabpanel" aria-labelledby="pills-soon-tab">...</div>
             </div>
-
-
         </div>
     )
 }

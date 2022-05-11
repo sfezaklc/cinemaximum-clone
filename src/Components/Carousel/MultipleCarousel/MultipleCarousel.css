@@ -10,7 +10,7 @@
     flex-direction: column;
 }
 .card:hover{
-    background-image: url(../../images/bg-movie-roll-over.png);
+    background-image: url(../../../images/bg-movie-roll-over.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -20,13 +20,14 @@
 .card img{
     width: 100%;
 }
-.multiCarousel .slick-slide{
-    margin: 0 15px;
-}
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #e6007e;
 }
 .nav-link{
     color: #000;
+}
+.react-multi-carousel-track {
+    margin: 0;
+    gap: 15px;
 }
