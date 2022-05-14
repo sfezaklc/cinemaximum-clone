@@ -2,6 +2,7 @@ import { React, useState, useEffect, useRef } from 'react'
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../Components/Header/Header';
 import './MoviesDetail.css';
 import { Modal } from 'bootstrap'
 import Footer from '../Components/Footer/Footer';
@@ -99,7 +100,7 @@ export default function MoviesDetail() {
         // console.log(item)
         // item.classList.add('active')
         // document.querySelector('#myTabContent').firstChild.classList.add('show', 'active')
-      
+
       })
     //   Promise.resolve()
     //     .then(() => setShowModal(false))
@@ -126,6 +127,7 @@ export default function MoviesDetail() {
   }
   return (
     <>
+      <Header />
       <div className='cs-container'>
         <div className='movie-overlay' style={customStyle}></div>
         <div className='container d-flex justify-content-center align-items-center' style={{ height: "100%" }}>

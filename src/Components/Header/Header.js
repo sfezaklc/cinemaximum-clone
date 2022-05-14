@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './Header.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle'
@@ -9,8 +9,11 @@ import logo from '../../images/cinemaximum_logo.svg'
 import kampanya from '../../images/uyelere-ozel-pazartesi-carsamba_1920x420-05.jpg'
 import goldclass from '../../images/gold_class_salon_sizin-black-logo.png'
 import moviepass from '../../images/header_cgvmoviepass.png'
-
-const Header = () => {
+import { UserContext } from '../../Contexts/UserContext';
+const Header = (props) => {
+    const userMail = localStorage.getItem('User')
+    const {user} = props
+    console.log(user)
     let navigate = useNavigate();
     const HandleLogin = (e) => {
         navigate(`/${e}`)
@@ -83,7 +86,10 @@ const Header = () => {
 
                     </div>
                     <button type="button" className="btn cs-header-btn-1">Üye Ol</button>
-                    <button type="button" className="btn cs-header-btn-2" onClick={() => HandleLogin("login")}>Giriş</button>
+                    { userMail ? <div className='user'>{userMail}</div> 
+                    :<button type="button" className="btn cs-header-btn-2" onClick={() => HandleLogin("login")}>Giriş</button>
+                     
+                    }
                 </div>
             </nav>
         </>
