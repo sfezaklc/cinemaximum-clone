@@ -13,7 +13,7 @@ export default function BuyTicket() {
   const [movie, setMovie] = useState([])
   const navigate = useNavigate()
   const fetchTasks = () => {
-    axios.get(`http://localhost:3004/movies/${id}`)
+    axios.get(`https://movies-json-api.herokuapp.com/movies/${id}`)
       .then(data => {
         setMovie(data.data)
       })
