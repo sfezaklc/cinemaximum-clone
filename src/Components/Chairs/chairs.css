@@ -11,3 +11,12 @@
     height: 2px;
     background: #000000;
 }
+.row {
+    --bs-gutter-x: 0;
+}
+.chairs-box{
+    border: 1px #d0cfc3;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 4px;
+    padding-left: 15px;
+}
