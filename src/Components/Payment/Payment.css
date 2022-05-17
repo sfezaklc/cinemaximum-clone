@@ -1,3 +1,11 @@
+.payment-container{background-color: #ffffff; width: 90%;}
 .payment-container .row{
     justify-content: space-between;
+}
+.form-control {
+    background-color: #ececec;
+}
+#exampleCheck1, #exampleCheck2 {
+    background-color: #ececec;
+    width: 1em;
 }

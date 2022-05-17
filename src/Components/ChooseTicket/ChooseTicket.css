@@ -7,3 +7,10 @@
 .cs-ticket-icon{
     color: #d78098;
 }
+.plus-minus{
+    border: none;
+    padding: 3px 8px;
+}
+p{
+    max-width: 400px;
+}

@@ -5,7 +5,7 @@ const Payment = () => {
     <div className='payment-container mt-3'>
       <form>
         <div class="row mb-3">
-          <div class="col-4">
+          <div class="col-5">
             <input type="text" class="form-control" placeholder="Adın, Soyadın" />
           </div>
           <div class="col-6">
@@ -13,7 +13,7 @@ const Payment = () => {
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col-4">
+          <div className="col-5">
             <input type="email" class="form-control" placeholder='E-mail' />
           </div>
           <div className='col-6'>
@@ -28,7 +28,7 @@ const Payment = () => {
           </div>
         </div>
         <div class="row mb-3">
-          <div className="col-4">
+          <div className="col-5">
             <input type="tel" class="form-control" placeholder='Cep telefonu' />
           </div>
         </div>
@@ -40,7 +40,7 @@ const Payment = () => {
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck2" />
-          <label class="form-check-label" for="exampleCheck1">SMS ile bilgilendirmek istiyorum</label>
+          <label class="form-check-label" for="exampleCheck2">SMS ile bilgilendirmek istiyorum</label>
         </div>
         <button type="submit" class="btn btn-dark">Ödeme</button>
       </form>
