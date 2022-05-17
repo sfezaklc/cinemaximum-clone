@@ -1,3 +1,25 @@
-.nav-tabs .nav-item{
+.nav-tabs .nav-item {
     max-width: 125px;
+}
+.btn-outline-secondary{
+    width: 105px;
+    color: #000000;
+    text-align: end;
+    transition: 0.5s;
+    height: 42px;
+}
+.btn-outline-secondary:hover {
+    background: linear-gradient(13deg, #ec2938 0%, #e6017c 99%);
+    border: none;
+}
+.nav-tabs .nav-link:active{
+    color: #000000;
+}
+.nav-tabs .nav-link{
+    color: #9c9c9c;
+    font-weight: 200;
+    font-size: 18px;
+}
+.nav-tabs{
+    border: none;
 }

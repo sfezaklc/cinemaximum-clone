@@ -1,8 +1,28 @@
 import React from 'react'
 import './Footer.css'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookF, faInstagram,faTwitter,faYoutube,faFoursquare } from '@fortawesome/free-brands-svg-icons' 
 const Footer = () => {
     return (
-        <div className='footer-container mt-5'>
+        <div className='footer-container mt-5 mb-5'>
+            <h6 className='text-center'>Bizi Takip Et</h6>
+            <div className="row footer-icons-container mb-4">
+                <div className="col-2">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                </div>
+                <div className="col-2">
+                    <FontAwesomeIcon icon={faInstagram} />
+                </div>
+                <div className="col-2">
+                    <FontAwesomeIcon icon={faTwitter}/>
+                </div>
+                <div className="col-2">
+                    <FontAwesomeIcon icon={faYoutube} />
+                </div>
+                <div className="col-2">
+                    <FontAwesomeIcon icon={faFoursquare} />
+                </div>
+            </div>
             <div className='container row mx-auto'>
                 <div className='col-8 d-flex justify-content-between text-start '>
                     <ul>

@@ -31,3 +31,8 @@
     margin: 0;
     gap: 15px;
 }
+.btn-light:hover{
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+}
