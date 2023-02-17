@@ -1,4 +1,4 @@
-# Canlı test linki: https://cinemaximum-clone.vercel.app/
+
 
 # Getting Started with Create React App
 
