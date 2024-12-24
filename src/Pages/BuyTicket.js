@@ -20,7 +20,7 @@ export default function BuyTicket() {
   const [step, setStep] = useState(0)
 
   const fetchTasks = () => {
-    axios.get(`https://movies-json-api.herokuapp.com/movies/${id}`)
+    axios.get(`https://json-api-gold.vercel.app/movies/${id}`)
       .then(data => {
         setMovie(data.data)
       })

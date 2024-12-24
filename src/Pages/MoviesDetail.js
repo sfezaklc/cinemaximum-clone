@@ -52,7 +52,7 @@ export default function MoviesDetail() {
   const modalRef = useRef()
   //let modal;
   const fetchTasks = () => {
-    axios.get(`https://movies-json-api.herokuapp.com/movies/${id}`)
+    axios.get(`https://json-api-gold.vercel.app/movies/${id}`)
       .then(data => {
         setMovie(data.data)
       })

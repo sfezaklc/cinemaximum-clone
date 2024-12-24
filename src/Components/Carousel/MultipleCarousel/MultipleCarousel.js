@@ -27,7 +27,7 @@ const MultipleCarousel = () => {
     const navigate = useNavigate();
     const [movies, setMovies] = useState([]);
     const fetchTasks = () => {
-        axios.get("https://movies-json-api.herokuapp.com/movies")
+        axios.get("https://json-api-gold.vercel.app/movies")
             .then(data => {
                 setMovies(data.data)
             })
